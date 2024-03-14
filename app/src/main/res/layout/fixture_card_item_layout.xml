@@ -2,8 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="327dp"
-    android:layout_height="257dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="17dp"
@@ -20,7 +20,7 @@
         android:layout_marginBottom="148dp" />
 
     <LinearLayout
-        android:layout_width="326dp"
+        android:layout_width="327dp"
         android:layout_height="257dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="1dp"
@@ -70,20 +70,17 @@
             android:layout_marginTop="8dp"
             android:background="#eaf0f2">
 
-            <!-- Your existing View with background -->
             <View
                 android:layout_width="135dp"
                 android:layout_height="24dp"
                 android:background="#eaf0f2" />
 
-            <!-- Linear Layout to hold TextView and ImageView -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <!-- ImageView -->
                 <ImageView
                     android:id="@+id/played"
                     android:layout_width="24dp"
@@ -92,7 +89,6 @@
                     android:layout_marginStart="2dp"
                     android:src="@drawable/icon_match_status_played" />
 
-                <!-- TextView -->
                 <TextView
                     android:id="@+id/match_status"
                     android:layout_width="99dp"
@@ -114,11 +110,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="326dp"
-        android:layout_height="257dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="1dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
         <TextView
             android:id="@+id/home_team"
@@ -145,7 +139,7 @@
             android:layout_marginTop="133dp"
             android:layout_marginBottom="108dp"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center"
             android:letterSpacing="0.02"
             android:lineSpacingExtra="2sp"
             android:textColor="#1e1e1e"
@@ -155,13 +149,14 @@
 
         <TextView
             android:id="@+id/home_score"
-            android:layout_width="24dp"
-            android:layout_height="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="133dp"
             android:layout_marginBottom="108dp"
+            android:layout_marginEnd="0dp"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal"
             android:letterSpacing="0.02"
             android:lineSpacingExtra="0sp"
             android:textColor="#1e1e1e"
@@ -172,11 +167,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="326dp"
-        android:layout_height="257dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="1dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/away_team"
@@ -202,7 +194,7 @@
             android:layout_marginTop="157dp"
             android:layout_marginBottom="84dp"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center"
             android:letterSpacing="0.02"
             android:lineSpacingExtra="2sp"
             android:textColor="#1e1e1e"
@@ -212,13 +204,14 @@
 
         <TextView
             android:id="@+id/away_score"
-            android:layout_width="24dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="157dp"
             android:layout_marginBottom="84dp"
+            android:layout_marginEnd="0dp"
             android:fontFamily="@font/poppins_semibold"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="center_horizontal"
             android:letterSpacing="0.02"
             android:lineSpacingExtra="0sp"
             android:textColor="#1e1e1e"
@@ -230,7 +223,7 @@
 
     <LinearLayout
         android:layout_width="326dp"
-        android:layout_height="257dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="1dp"
         android:orientation="horizontal">

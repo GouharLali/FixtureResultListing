@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FixtureResultListing</string>
+    <string name="fixture">Fixture</string>
+    <string name="fixtures">Fixtures</string>
 </resources>

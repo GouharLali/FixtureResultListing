@@ -33,8 +33,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="178.2dp"
-            app:srcCompat="@drawable/competitions_league_one_horizontal"
-            android:contentDescription="TODO" />
+            app:srcCompat="@drawable/competitions_league_one_horizontal" />
 
         <TextView
             android:id="@+id/date_year"

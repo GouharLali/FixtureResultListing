@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="327dp"
+    android:layout_height="257dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="17dp"
+    android:layout_marginBottom="16dp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="227dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="148dp" />
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="257dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/competitions_league_one_horizontal"
+            android:layout_width="165.8dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="178.2dp"
+            app:srcCompat="@drawable/competitions_league_one_horizontal" />
+
+        <TextView
+            android:id="@+id/date_year"
+            android:layout_width="76dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="133dp"
+            android:fontFamily="@font/poppins_regular"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="2sp"
+            android:textColor="#1e1e1e"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="12/01/2022" />
+
+        <TextView
+            android:id="@+id/stadium_name"
+            android:layout_width="189dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/poppins_regular"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="4sp"
+            android:textColor="#1e1e1e"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="The Valley" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:background="#eaf0f2">
+
+            <!-- Your existing View with background -->
+            <View
+                android:layout_width="135dp"
+                android:layout_height="24dp"
+                android:background="#eaf0f2" />
+
+            <!-- Linear Layout to hold TextView and ImageView -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- ImageView -->
+                <ImageView
+                    android:id="@+id/played"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="2dp"
+                    android:src="@drawable/icon_match_status_played" />
+
+                <!-- TextView -->
+                <TextView
+                    android:id="@+id/match_status"
+                    android:layout_width="99dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="4sp"
+                    android:text="@string/match_status"
+                    android:textColor="#1e1e1e"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="278dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/home_team"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="133dp"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="0sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="Charlton Athletic" />
+
+
+        <TextView
+            android:id="@+id/home_penalty_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="133dp"
+            android:layout_marginBottom="108dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal|center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="2sp"
+            android:textColor="#1e1e1e"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="(88)" />
+
+        <TextView
+            android:id="@+id/home_score"
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="133dp"
+            android:layout_marginBottom="108dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal|center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="0sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="278dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/away_team"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="157dp"
+            android:layout_marginEnd="0dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="0sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="Crew Alexandra" />
+
+        <TextView
+            android:id="@+id/away_penalty_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="157dp"
+            android:layout_marginBottom="84dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal|center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="2sp"
+            android:textColor="#1e1e1e"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            tools:text="(88)" />
+
+        <TextView
+            android:id="@+id/away_score"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="157dp"
+            android:layout_marginBottom="84dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal|center_vertical"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="0sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            tools:text="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="326dp"
+        android:layout_height="278dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="1dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="155dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="197dp"
+            android:background="#1e1e1e">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/report"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="8sp"
+                    android:text="@string/report"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="155dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="197dp"
+            android:background="#eaf0f2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/matchcentre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:letterSpacing="0.02"
+                    android:lineSpacingExtra="8sp"
+                    android:text="@string/match_centre"
+                    android:textColor="#c30017"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eaf0f2" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+

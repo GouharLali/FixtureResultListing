@@ -2,4 +2,7 @@
     <string name="app_name">FixtureResultListing</string>
     <string name="fixture">Fixture</string>
     <string name="fixtures">Fixtures</string>
+    <string name="match_centre">Match Centre</string>
+    <string name="report">Report</string>
+    <string name="match_status">Match Status</string>
 </resources>

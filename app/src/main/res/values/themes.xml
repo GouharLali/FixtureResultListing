@@ -1,8 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.FixtureResultListing" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/brand_primary</item>
+        <item name="colorPrimaryVariant">@color/brand_primary_variant</item>
+        <item name="colorPrimaryDark">@color/brand_primary_variant</item>
+        <item name="colorOnPrimary">@color/brand_text_color</item>
+        <item name="colorSecondary">@color/brand_secondary</item>
+        <item name="colorSecondaryVariant">@color/brand_secondary</item>
+        <item name="colorOnSecondary">@color/brand_secondary_text_color</item>
+        <item name="android:textColorPrimary">?attr/colorOnPrimary</item>
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="android:statusBarColor">#eaf0f2</item>
+        <item name="android:windowLightStatusBar">true</item>
+
     </style>
 
     <style name="Theme.FixtureResultListing" parent="Base.Theme.FixtureResultListing" />

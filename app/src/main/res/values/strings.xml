@@ -5,4 +5,7 @@
     <string name="match_centre">Match Centre</string>
     <string name="report">Report</string>
     <string name="match_status">Match Status</string>
+    <string name="fixture_text">Fixture</string>
+    <string name="no_matches_found">No matches found</string>
+    <string name="please_check_back_later">Please check back later</string>
 </resources>

@@ -11,11 +11,6 @@ import retrofit2.http.GET
 interface FixtureApiService {
     @GET("fixtures")
     fun getFixtures(): Call<Fixture>
-
-    interface FixtureCallback {
-        fun onSuccess(fixtures: List<Fixture>)
-        fun onFailure(error: String)
-    }
 }
 
 object RetrofitClient {

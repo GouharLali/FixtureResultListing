@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nomatchesfound"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   >
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/fixture_header_item_layout" />
+
+    <RelativeLayout
+        android:layout_width="327dp"
+        android:layout_height="176dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="222dp"
+        android:layout_marginEnd="16dp">
+
+        <TextView
+            android:id="@+id/nomatches"
+            android:layout_width="279dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="84dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="70dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="6sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:text="@string/no_matches_found" />
+
+        <TextView
+            android:id="@+id/checklater"
+            android:layout_width="279dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="114dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="6sp"
+            android:textColor="#1e1e1e"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:text="@string/please_check_back_later" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="145dp"
+            android:layout_marginBottom="96dp"
+            app:srcCompat="@drawable/icon_calendar" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

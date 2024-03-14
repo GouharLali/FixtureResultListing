@@ -1,14 +1,15 @@
 package com.example.fixtureresultlisting
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.fixture.data.Match
+import com.example.fixtureresultlisting.databinding.FixtureCardItemLayoutBinding
+import com.example.fixtureresultlisting.databinding.FixtureHeaderItemLayoutBinding
 
 class FixtureAdapter(
     private val context: Context,
@@ -48,15 +49,13 @@ class FixtureAdapter(
         Log.d(TAG, "onCreateViewHolder()")
         return when (viewType) {
             VIEW_TYPE_HEADER -> {
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.fixture_header_item_layout, parent, false)
-                HeaderViewHolder(view)
+                val binding = FixtureHeaderItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                HeaderViewHolder(binding)
             }
 
             VIEW_TYPE_ITEM -> {
-                val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.fixture_card_item_layout, parent, false)
-                ItemViewHolder(view)
+                val binding = FixtureCardItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                ItemViewHolder(binding)
             }
 
             else -> throw IllegalArgumentException("Invalid view type")
@@ -78,46 +77,49 @@ class FixtureAdapter(
     }
 
     // ViewHolder for the header view
-    inner class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class HeaderViewHolder(private val binding: FixtureHeaderItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             Log.d(TAG, "HeaderViewHolder bind()")
-            val headerTextView = itemView.findViewById<TextView>(R.id.textView)
-            headerTextView.text = "Fixture"
+            binding.textView.text = itemView.context.getString(R.string.fixture_text)
         }
     }
 
-    // ViewHolder for the item view
-    inner class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+    // ViewHolder for the item view
+    inner class ItemViewHolder(private val binding: FixtureCardItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.matchcentre.setOnClickListener {
+                val context = binding.root.context
+                val intent = Intent(context, NoMatchesFoundActivity::class.java) // Replace with your activity
+                context.startActivity(intent)
+            }
+        }
         fun bind(match: Match) {
-            Log.d(TAG, "ItemViewHolder bind()")
-            val matchInfo = match.matchInfo // Assuming there's only one match in the list
+            val matchInfo = match.matchInfo
             val liveData = match.liveData
 
             // Bind data to views
-            itemView.findViewById<TextView>(R.id.date_year).text = matchInfo.date.toString()
-            itemView.findViewById<TextView>(R.id.stadium_name).text = matchInfo.venue.longName
-            itemView.findViewById<TextView>(R.id.match_status).text = liveData.matchStatus
-            itemView.findViewById<TextView>(R.id.home_team).text = matchInfo.contestant.firstOrNull()?.name ?: ""
+            binding.dateYear.text = matchInfo.date.toString()
+            binding.stadiumName.text = matchInfo.venue.longName
+            binding.matchStatus.text = liveData.matchStatus
+            binding.homeTeam.text = matchInfo.contestant.firstOrNull()?.name ?: ""
 
-            val scoreEntries = liveData.scoreEntries
-            itemView.findViewById<TextView>(R.id.home_penalty_score).text = scoreEntries.total.home_score.toString() ?: ""
-            itemView.findViewById<TextView>(R.id.away_penalty_score).text = scoreEntries.total.away_score.toString() ?: ""
+            val total = liveData.scoreEntries?.total // Add null check here
+            binding.homePenaltyScore.text = total?.home_score?.toString() ?: ""
+            binding.awayPenaltyScore.text = total?.away_score?.toString() ?: ""
 
-            itemView.findViewById<TextView>(R.id.home_score).text = liveData.home_score.toString() ?: ""
-            itemView.findViewById<TextView>(R.id.away_team).text = matchInfo.contestant.getOrNull(1)?.name ?: ""
-            itemView.findViewById<TextView>(R.id.away_score).text = liveData.away_score.toString() ?: ""
-
+            binding.homeScore.text = liveData.home_score?.toString() ?: ""
+            binding.awayTeam.text = matchInfo.contestant.getOrNull(1)?.name ?: ""
+            binding.awayScore.text = liveData.away_score?.toString() ?: ""
 
             // Load image using Glide
-            Glide.with(itemView.context)
+            Glide.with(binding.root.context)
                 .load(matchInfo.contestant.firstOrNull()?.crest?.uri1x)
-                .into(itemView.findViewById(R.id.logo_image))
+                .into(binding.logoImage)
         }
 
     }
 }
-
 
 
 

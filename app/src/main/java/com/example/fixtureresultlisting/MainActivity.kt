@@ -1,7 +1,6 @@
 package com.example.fixtureresultlisting
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         fixtureAdapter = FixtureAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = fixtureAdapter
+
 
         // Call function to fetch fixtures
         getFixtures()

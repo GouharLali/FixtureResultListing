@@ -1,4 +1,4 @@
-package com.example.fixture.data
+package com.example.fixtureresultlisting.data
 
 data class ScoreEntries(
     val ft: Ft,

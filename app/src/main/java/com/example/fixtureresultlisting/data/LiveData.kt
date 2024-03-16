@@ -1,4 +1,4 @@
-package com.example.fixture.data
+package com.example.fixtureresultlisting.data
 
 data class LiveData(
     val away_score: Int,

@@ -1,6 +1,6 @@
 package com.example.fixtureresultlisting
 
-import com.example.fixture.data.Fixture
+import com.example.fixtureresultlisting.data.Fixture
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Call

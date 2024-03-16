@@ -1,4 +1,4 @@
-package com.example.fixture.data
+package com.example.fixtureresultlisting.data
 
 import com.google.gson.annotations.SerializedName
 

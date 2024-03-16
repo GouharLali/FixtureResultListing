@@ -1,4 +1,4 @@
-package com.example.fixture.data
+package com.example.fixtureresultlisting.data
 
 data class Ht(
     val away_score: Int,

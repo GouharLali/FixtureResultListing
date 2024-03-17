@@ -8,4 +8,13 @@
     <string name="fixture_text">Fixture</string>
     <string name="no_matches_found">No matches found</string>
     <string name="please_check_back_later">Please check back later</string>
+    <string name="_88">(88)</string>
+    <string name="_1">1</string>
+    <string name="logo_description">Description of your logo</string>
+    <string name="date">12/01/2022</string>
+    <string name="stadium">The Valley</string>
+    <string name="home_team">Charlton Athletic</string>
+    <string name="away_team">Crew Alexandra</string>
+
 </resources>
+

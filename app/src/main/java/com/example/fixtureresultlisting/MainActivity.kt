@@ -11,6 +11,7 @@ import com.example.fixtureresultlisting.data.Fixture
 import com.example.fixtureresultlisting.room.MatchEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,13 +25,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fixture_list_screen)
 
-        // Initialize RecyclerView and Adapter
         recyclerView = findViewById(R.id.recyclerview)
         fixtureAdapter = FixtureAdapter(this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = fixtureAdapter
 
-        // Call function to fetch fixtures
         getFixtures()
     }
 
@@ -40,8 +39,6 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<Fixture>, response: Response<Fixture>) {
                 if (response.isSuccessful) {
                     handleSuccessfulResponse(response.body())
-                    // Fetch data from Room database after successful network call
-                    fetchMatchesFromDatabase()
                 } else {
                     handleErrorResponse("Failed to fetch fixtures: ${response.message()}")
                 }
@@ -53,17 +50,15 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    // Coroutine function to fetch matches from the Room database
-// Inside fetchMatchesFromDatabase function
     private fun fetchMatchesFromDatabase() {
         lifecycleScope.launch(Dispatchers.IO) {
             val matches = MyApp.database.matchDao().getAllMatches()
             if (matches.isNotEmpty()) {
-                launch(Dispatchers.Main) {
+                withContext(Dispatchers.Main) {
                     fixtureAdapter.setData(matches.map { it.match })
                 }
             } else {
-                launch(Dispatchers.Main) {
+                withContext(Dispatchers.Main) {
                     showToast("No matches found in database")
                 }
             }
@@ -74,25 +69,15 @@ class MainActivity : AppCompatActivity() {
         if (fixture != null) {
             val matches = fixture.match.map { MatchEntity(match = it) }
             lifecycleScope.launch(Dispatchers.IO) {
-                // Access the matchDao
                 val matchDao = MyApp.database.matchDao()
-
-                // Clear existing data from the database
                 matchDao.clearMatches()
-
-                // Insert new matches into the database
                 matchDao.insertMatches(matches)
-
-                Log.d("MainActivity", "Data cleared and new data inserted into Room database successfully")
+                fetchMatchesFromDatabase()
             }
         } else {
             showToast("No fixtures found")
         }
     }
-
-
-
-
 
     private fun handleErrorResponse(message: String) {
         showToast(message)
@@ -101,7 +86,4 @@ class MainActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
     }
-
-
-
 }
